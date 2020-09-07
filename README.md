@@ -1,0 +1,2 @@
+# RitaBotSA
+RitaBot versão standalone
