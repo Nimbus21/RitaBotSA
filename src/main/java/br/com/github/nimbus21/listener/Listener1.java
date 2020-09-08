@@ -2,6 +2,7 @@ package br.com.github.nimbus21.listener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -42,13 +43,13 @@ public class Listener1 implements MessageCreateListener {
 		CompletableFuture<MessageSet> messageSet = null;
 		MessageSet aqui = null;
 
-		if (messageAuthor.getName().equalsIgnoreCase("Nimbus21") && comandosCasar.contains(message.getContent())) {
-			System.out.println("Thandy falou e foi um comando de casamento");
-			messageSet = event.getMessage().getMessagesAfter(1);
+		if (messageAuthor.getName().equalsIgnoreCase("Mudamaid 23")) {
+
+			messageSet = event.getMessage().getMessagesBefore(1);
 
 			try {
 				if (messageSet == null) {
-					System.out.println("NULL 1");
+
 				} else {
 					aqui = messageSet.get();
 				}
@@ -60,25 +61,30 @@ public class Listener1 implements MessageCreateListener {
 			}
 
 			if (aqui == null) {
-				System.out.println("NULL 2");
+
 			} else {
 
 				try {
-					Message messagemSeguinte = aqui.first();
-					//System.out.println(messagemSeguinte.getAuthor().getName());
-					contadorHusbando++;
-					event.getChannel().sendMessage(messagemSeguinte.getAuthor().getName() + " mandou waifu");
-					event.getChannel().sendMessage("Contador de waifus enviadas na rodada: " + contadorHusbando);
+					Message messaga = aqui.first();
+
+					if (comandosCasar.contains(messaga.getContent())) {
+						contadorHusbando++;
+
+						String nome = messaga.getAuthor().getName();
+
+						System.out.println(nome);
+						System.out.println(messaga.getContent());
+						event.getChannel().sendMessage("Mudamaid 23 mandou waifu");
+						event.getChannel().sendMessage("Contador de waifus enviadas na rodada: " + contadorHusbando);
+					}
+
+				} catch (NoSuchElementException e) {
+					System.out.println("NoSuchElementException");
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Outra exception");
 				}
 			}
-
 		}
-
-//		if (comandosCasar.contains(message.getContent())) {
-//			event.getChannel().sendMessage("Tá rodando aí mano?");
-//		}
 
 		if (message.getContent().equalsIgnoreCase("r!zera")) {
 			contadorHusbando = 0;
