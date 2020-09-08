@@ -27,6 +27,11 @@ public class Listener1 implements MessageCreateListener {
 		comandosCasar.add("$ma");
 		comandosCasar.add("$hg");
 		comandosCasar.add("$wg");
+		comandosCasar.add("$HA");
+		comandosCasar.add("$WA");
+		comandosCasar.add("$MA");
+		comandosCasar.add("$HG");
+		comandosCasar.add("$WG");
 	}
 
 	@Override
@@ -43,7 +48,7 @@ public class Listener1 implements MessageCreateListener {
 
 			try {
 				if (messageSet == null) {
-
+					System.out.println("NULL 1");
 				} else {
 					aqui = messageSet.get();
 				}
@@ -55,7 +60,7 @@ public class Listener1 implements MessageCreateListener {
 			}
 
 			if (aqui == null) {
-
+				System.out.println("NULL 2");
 			} else {
 
 				try {
