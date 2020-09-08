@@ -70,7 +70,7 @@ public class Listener1 implements MessageCreateListener {
 					event.getChannel().sendMessage(messagemSeguinte.getAuthor().getName() + " mandou waifu");
 					event.getChannel().sendMessage("Contador de waifus enviadas na rodada: " + contadorHusbando);
 				} catch (Exception e) {
-					System.out.println("algo diferente de mensagem");
+					e.printStackTrace();
 				}
 			}
 
