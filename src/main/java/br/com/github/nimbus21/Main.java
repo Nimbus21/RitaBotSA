@@ -15,6 +15,21 @@ public class Main {
 		Listener1 listener1 = new Listener1();
 		
 		api.addListener(listener1);
+		
+		//Listener2 listener2 = new Listener2();
+		
+		//api.addListener(listener2);
+		
+		//List<String> comandosCasar = new ArrayList<String>();
+		
+		//Adicionador eu = new Adicionador();
+		
+		//Adicionador.adicionaAK(comandosCasar);
+		
+		//System.out.println(comandosCasar.contains("our house"));
+		
+		//System.out.println(listener1.getComandosCasar().get(0));
+		//System.out.println();
 	}
 
 }
