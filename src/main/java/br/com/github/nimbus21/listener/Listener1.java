@@ -70,12 +70,7 @@ public class Listener1 implements MessageCreateListener {
 					if (comandosCasar.contains(messaga.getContent())) {
 						contadorHusbando++;
 
-						String nome = messaga.getAuthor().getName();
-
-						System.out.println(nome);
-						System.out.println(messaga.getContent());
-						event.getChannel().sendMessage("Mudamaid 23 mandou waifu");
-						event.getChannel().sendMessage("Contador de waifus enviadas na rodada: " + contadorHusbando);
+						event.getChannel().sendMessage("Mudamaid 23 mandou waifu! Contador de waifus enviadas na rodada: " + contadorHusbando);
 					}
 
 				} catch (NoSuchElementException e) {
@@ -98,6 +93,9 @@ public class Listener1 implements MessageCreateListener {
 		}
 		if (message.getContent().equalsIgnoreCase("r!salva")) {
 			event.getChannel().sendMessage("Vou tentar...");
+		}
+		if (message.getContent().equalsIgnoreCase("r!contador")) {
+			event.getChannel().sendMessage("Contador em " + contadorHusbando);
 		}
 	}
 
