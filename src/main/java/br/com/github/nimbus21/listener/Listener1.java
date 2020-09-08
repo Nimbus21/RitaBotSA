@@ -16,6 +16,7 @@ public class Listener1 implements MessageCreateListener {
 		Message message = event.getMessage();
 
 		if (message.getContent().equalsIgnoreCase("$ha")) {
+			contadorHusbando++;
 			event.getChannel().sendMessage("Tá rodando aí mano? Contador atualmente em..." + contadorHusbando);
 		}
 
