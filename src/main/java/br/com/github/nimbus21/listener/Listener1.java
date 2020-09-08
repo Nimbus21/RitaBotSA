@@ -25,6 +25,7 @@ public class Listener1 implements MessageCreateListener {
 		}
 
 		if (message.getContent().equalsIgnoreCase("r!zera")) {
+			contadorHusbando = 0;
 			event.getChannel().sendMessage("Blz, tá zerado essa porra");
 		}
 		if (message.getContent().equalsIgnoreCase("r!rita")) {
